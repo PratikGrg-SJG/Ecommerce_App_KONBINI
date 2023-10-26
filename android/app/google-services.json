@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "996682432217",
+    "project_id": "ecommerce-konbini",
+    "storage_bucket": "ecommerce-konbini.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996682432217:android:4174c8fae7df10e8bbc8c8",
+        "android_client_info": {
+          "package_name": "com.example.konbini"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996682432217-q085e61a7bp972g1h4tdbb2slmia2i1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.konbini",
+            "certificate_hash": "3a3e9129309d03308e59a179b21dce7d5e1e95e9"
+          }
+        },
+        {
+          "client_id": "996682432217-1bfi440fk0l2qdjutrqhe0i9ovjn0a6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXRPTFYRIuqrLVXOZV9_1U10KONhWl0mI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996682432217-1bfi440fk0l2qdjutrqhe0i9ovjn0a6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
