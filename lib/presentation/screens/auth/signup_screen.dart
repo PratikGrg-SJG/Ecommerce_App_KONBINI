@@ -60,6 +60,7 @@ class _LoginScreenState extends State<SignupScreen> {
                       child: Column(
                         children: [
                           TextFormField(
+                            style: const TextStyle(fontSize: 14),
                             controller: _userNameController,
                             validator: (value) =>
                                 FormValidator.validateUserName(value),
@@ -77,6 +78,7 @@ class _LoginScreenState extends State<SignupScreen> {
                             height: 20,
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 14),
                             controller: _emailController,
                             validator: (value) =>
                                 FormValidator.validateEmail(value),
@@ -94,6 +96,7 @@ class _LoginScreenState extends State<SignupScreen> {
                             height: 20,
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 14),
                             obscureText: _isPasswordVisible,
                             controller: _passwordController,
                             validator: (value) =>
@@ -122,6 +125,7 @@ class _LoginScreenState extends State<SignupScreen> {
                             height: 20,
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 14),
                             obscureText: _isConfirmPasswordVisible,
                             controller: _confirmPasswordController,
                             validator: (value) =>
@@ -151,36 +155,41 @@ class _LoginScreenState extends State<SignupScreen> {
                           const SizedBox(
                             height: 20,
                           ),
-                          ElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                _authService
-                                    .signUp(
-                                        emailController:
-                                            _emailController.text.toString(),
-                                        passwordController:
-                                            _passwordController.text.toString(),
-                                        userName:
-                                            _userNameController.text.toString())
-                                    .then((value) =>
-                                        Navigator.pushReplacementNamed(
-                                            context, LandingScreen.routeName));
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xff58b268),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(25),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  _authService
+                                      .signUp(
+                                          emailController:
+                                              _emailController.text.toString(),
+                                          passwordController:
+                                              _passwordController.text
+                                                  .toString(),
+                                          userName: _userNameController.text
+                                              .toString())
+                                      .then((value) =>
+                                          Navigator.pushReplacementNamed(
+                                              context,
+                                              LandingScreen.routeName));
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0xff58b268),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25),
+                                ),
                               ),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 15, horizontal: 90),
-                              child: Text(
-                                "SIGN UP",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 15),
+                                child: Text(
+                                  "SIGN UP",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),

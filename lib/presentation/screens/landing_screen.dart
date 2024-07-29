@@ -64,12 +64,7 @@ class _LandingScreenState extends State<LandingScreen> {
       body: activeScreen,
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
-        type: BottomNavigationBarType.fixed,
-        onTap: ontap,
-        currentIndex: _currentIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        // selectedItemColor: primaryColor,
+        type: BottomNavigationBarType.fixed, 
         items: [
           BottomNavigationBarItem(
             label: "Home",

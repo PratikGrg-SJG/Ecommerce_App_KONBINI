@@ -84,6 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Column(
                         children: [
                           TextFormField(
+                            style: const TextStyle(fontSize: 14),
                             controller: _emailController,
                             validator: (value) =>
                                 FormValidator.validateEmail(value),
@@ -107,6 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             height: 20,
                           ),
                           TextFormField(
+                            style: const TextStyle(fontSize: 14),
                             obscureText: _isVisible,
                             controller: _passwordController,
                             validator: (value) {
@@ -153,29 +155,34 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     //
-                    ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          final user = _authService.login(
-                              _emailController.text, _passwordController.text);
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff58b268),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            final user = _authService.login(
+                                _emailController.text,
+                                _passwordController.text);
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff58b268),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
                         ),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 15,
-                          horizontal: 100,
-                        ),
-                        child: Text(
-                          "LOGIN",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 15,
+                            // horizontal: 100,
+                          ),
+                          child: Text(
+                            "LOGIN",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
